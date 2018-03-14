@@ -41,7 +41,7 @@ libvhd_la_SOURCES += ../../lvm/lvm-util.c
 
 libvhd_la_LDFLAGS = -version-info 1:1:1
 
-libvhd_la_LIBADD = -luuid -lcrypto $(LIBICONV)
+libvhd_la_LIBADD = -luuid -lcrypto $(LIBICONV) -licbinn_resolved -ldl
 
 libvhdio_la_SOURCES  = libvhdio.c
 libvhdio_la_SOURCES += ../../part/partition.c
@@ -50,7 +50,7 @@ libvhdio_la_LDFLAGS  = -release $(VERSION)
 libvhdio_la_LDFLAGS += -shared
 
 libvhdio_la_LIBADD  = libvhd.la
-libvhdio_la_LIBADD += -ldl
+libvhdio_la_LIBADD += -ldl -licbinn_resolved
 
 if ENABLE_VHDIO
 MAYBE_libvhdio_la = libvhdio.la
